@@ -12,16 +12,16 @@ public class TransformSyncer : MonoBehaviour
     {
         if(original.hasChanged)
         {
-            transform.localPosition = original.transform.position;
-            transform.localRotation = original.transform.rotation;
+            transform.localPosition = original.transform.localPosition;
+            transform.localRotation = original.transform.localRotation;
             
             transform.hasChanged = false;
             original.hasChanged = false;
         }
         if(transform.hasChanged && SyncCloneToOriginal)
         {
-            original.transform.position = transform.localPosition;
-            original.transform.rotation = transform.localRotation;
+            original.transform.localPosition = transform.localPosition;
+            original.transform.localRotation = transform.localRotation;
 
             transform.hasChanged = false;
             original.hasChanged = false;
