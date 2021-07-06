@@ -6,6 +6,9 @@ public class MiniWorld : MonoBehaviour
     [Tooltip("origin of mini world, e.g. left hand")]
     public Transform origin;
 
+    [Tooltip("offset from origin")]
+    public Vector3 offset;
+
     [Tooltip("Objects to include in miniature world")]
     public List<GameObject> realObjects;
 
@@ -26,8 +29,7 @@ public class MiniWorld : MonoBehaviour
 
     private void AlignMiniWorldToOrigin()
     {
-        var position = origin.transform.position;
-        position.y += 0.01f;
+        var position = origin.transform.position + offset;
         transform.SetPositionAndRotation(position, origin.transform.rotation);
     }
 
