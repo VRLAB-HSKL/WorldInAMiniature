@@ -14,15 +14,10 @@ public class VRCameraSyncer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target.hasChanged || pivot.hasChanged)
-        {
-            var headVector = target != null && pivot != null ? pivot.position - target.position : Vector3.zero;
-            transform.localPosition = target.transform.position + headVector;
-            transform.localRotation = pivot.transform.rotation;
+        // track position
+        transform.localPosition = target.localPosition + target.localRotation * pivot.localPosition;
 
-            transform.hasChanged = false;
-            target.hasChanged = false;
-            pivot.hasChanged = false;
-        }
+        // only track y rotation
+        transform.localRotation = Quaternion.Euler(0, pivot.localRotation.eulerAngles.y + target.localRotation.eulerAngles.y, 0);
     }
 }
