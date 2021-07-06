@@ -29,7 +29,7 @@ public class MiniWorld : MonoBehaviour
 
     private void AlignMiniWorldToOrigin()
     {
-        var position = origin.transform.position + offset;
+        var position = origin.transform.position + origin.transform.rotation * offset;
         transform.SetPositionAndRotation(position, origin.transform.rotation);
     }
 
