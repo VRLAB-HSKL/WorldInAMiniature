@@ -16,7 +16,7 @@ public class VRCameraSyncer : MonoBehaviour
     {
         if (target.hasChanged || pivot.hasChanged)
         {
-            var headVector = target != null && pivot != null ? Vector3.ProjectOnPlane(pivot.position - target.position, target.up) : Vector3.zero;
+            var headVector = target != null && pivot != null ? pivot.position - target.position : Vector3.zero;
             transform.localPosition = target.transform.position + headVector;
             transform.localRotation = pivot.transform.rotation;
 
