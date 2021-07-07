@@ -19,7 +19,6 @@ public class TransformTracker : MonoBehaviour
         GetComponent<Draggable>().onDrop.AddListener((Draggable d) => trackTargetEnabled = true);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (trackTargetEnabled)

@@ -10,8 +10,6 @@ public class VRCameraTracker : MonoBehaviour
     [Tooltip("The actual pivot point that want to be teleported to the pointed location Ex. CameraHead")]
     public Transform pivot;
 
-
-    // Update is called once per frame
     void Update()
     {
         // track position

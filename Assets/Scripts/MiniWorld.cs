@@ -14,14 +14,11 @@ public class MiniWorld : MonoBehaviour
 
     private List<GameObject> clonedObjects = new List<GameObject>();
 
-
-    // Start is called before the first frame update
     void Start()
     {
         CloneRealWorld();
     }
 
-    // Update is called once per frame
     void Update()
     {
         AlignMiniWorldToOrigin();
