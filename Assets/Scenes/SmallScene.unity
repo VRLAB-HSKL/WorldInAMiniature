@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   origin: {fileID: 1093863299}
-  offset: {x: 0, y: 0.01, z: 0}
+  originOffset: {x: 0, y: 0.01, z: 0}
   realObjects:
   - {fileID: 1808549259}
 --- !u!4 &31278755
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   origin: {fileID: 533270327}
-  offset: {x: 0, y: 0.051, z: 0}
+  originOffset: {x: 0, y: 0.06, z: 0}
   realObjects:
   - {fileID: 1808549259}
 --- !u!4 &534435444

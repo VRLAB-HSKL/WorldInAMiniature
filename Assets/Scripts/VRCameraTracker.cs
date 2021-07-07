@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VRCameraSyncer : MonoBehaviour
+public class VRCameraTracker : MonoBehaviour
 {
     [Tooltip("The actual transfrom that will be moved Ex. CameraRig")]
     public Transform target;

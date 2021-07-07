@@ -7,7 +7,7 @@ public class MiniWorld : MonoBehaviour
     public Transform origin;
 
     [Tooltip("offset from origin")]
-    public Vector3 offset;
+    public Vector3 originOffset;
 
     [Tooltip("Objects to include in miniature world")]
     public List<GameObject> realObjects;
@@ -29,7 +29,7 @@ public class MiniWorld : MonoBehaviour
 
     private void AlignMiniWorldToOrigin()
     {
-        var position = origin.transform.position + origin.transform.rotation * offset;
+        var position = origin.transform.position + origin.transform.rotation * originOffset;
         transform.SetPositionAndRotation(position, origin.transform.rotation);
     }
 
@@ -43,23 +43,24 @@ public class MiniWorld : MonoBehaviour
             GameObject clonedObject = Instantiate(realObject, parentTransform);
             clonedObjects.Add(clonedObject);
 
-            SyncTransforms(realObject, clonedObject);
+            TrackTransform(realObject, clonedObject);
         }
 
 
     }
 
-    // Adds TransformSyncer component to clonedObject and each child of it recursivly
-    private void SyncTransforms(GameObject realObject, GameObject clonedObject)
+    // Adds TransformTracker component to clonedObject and each child of it recursivly
+    // clonedObject tracks realObjects transform
+    private void TrackTransform(GameObject realObject, GameObject clonedObject)
     {
         Debug.Assert(realObject.transform.childCount == clonedObject.transform.childCount, "Not a clone of realObject");
 
         for (int i = 0; i < clonedObject.transform.childCount; i++)
         {
-            var transformSync = clonedObject.transform.GetChild(i).gameObject.AddComponent<TransformSyncer>();
-            transformSync.original = realObject.transform.GetChild(i);
+            var transformSync = clonedObject.transform.GetChild(i).gameObject.AddComponent<TransformTracker>();
+            transformSync.target = realObject.transform.GetChild(i);
 
-            SyncTransforms(realObject.transform.GetChild(i).gameObject, clonedObject.transform.GetChild(i).gameObject);
+            TrackTransform(realObject.transform.GetChild(i).gameObject, clonedObject.transform.GetChild(i).gameObject);
         }
     }
 }
