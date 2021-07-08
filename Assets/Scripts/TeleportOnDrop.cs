@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TeleportOnDrop : MonoBehaviour
 {
-    [Tooltip("The actual transfrom that will be moved Ex. CameraRig")]
+    [Tooltip("The actual transfrom that will be moved Ex. VROrigin")]
     public Transform target;
 
-    [Tooltip("The actual pivot point that want to be teleported to the pointed location Ex. CameraHead")]
+    [Tooltip("The actual pivot point that want to be teleported to the pointed location Ex. Camera")]
     public Transform pivot;
 
     public void TeleportTarget()
@@ -20,5 +20,27 @@ public class TeleportOnDrop : MonoBehaviour
 
         // rotate head around y axis to match dragged character look direction (only y rotation, no x and z)
         target.RotateAround(new Vector3(pivot.position.x, 0, pivot.position.z), Vector3.up, yRotation);
+    }
+
+    // to set default target and pivot automatically to VROrigin and Camera 
+    // source: Teleportable.cs from viu
+#if UNITY_EDITOR
+    protected virtual void Reset()
+    {
+        FindCameraAndCamRoot();
+    }
+#endif
+    private void FindCameraAndCamRoot()
+    {
+        foreach (var cam in Camera.allCameras)
+        {
+            if (!cam.enabled) { continue; }
+#if UNITY_5_4_OR_NEWER
+            // try find vr camera eye
+            if (cam.stereoTargetEye != StereoTargetEyeMask.Both) { continue; }
+#endif
+            pivot = cam.transform;
+            target = cam.transform.root == null ? cam.transform : cam.transform.root;
+        }
     }
 }

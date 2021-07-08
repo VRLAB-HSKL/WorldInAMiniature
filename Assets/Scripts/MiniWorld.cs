@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MiniWorld : MonoBehaviour
 {
-    [Tooltip("origin of mini world, e.g. left hand")]
+    [Tooltip("origin of mini world, Ex. Table or a grabbable Plate")]
     public Transform origin;
 
     [Tooltip("offset from origin")]
