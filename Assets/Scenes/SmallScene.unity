@@ -1928,6 +1928,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df1de1cce3de2543bef4a7da4ce501b, type: 3}
+--- !u!4 &1002904754 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 498084, guid: 12ee41758a687f54e98120e486ccd16e, type: 3}
+  m_PrefabInstance: {fileID: 1232404484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1063032422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2294,6 +2299,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 479270, guid: 12ee41758a687f54e98120e486ccd16e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 479270, guid: 12ee41758a687f54e98120e486ccd16e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 479270, guid: 12ee41758a687f54e98120e486ccd16e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481890, guid: 12ee41758a687f54e98120e486ccd16e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481890, guid: 12ee41758a687f54e98120e486ccd16e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481890, guid: 12ee41758a687f54e98120e486ccd16e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421756, guid: 12ee41758a687f54e98120e486ccd16e, type: 3}
+      propertyPath: reticleForStraightRay
+      value: 
+      objectReference: {fileID: 1002904754}
     - target: {fileID: 11479152, guid: 12ee41758a687f54e98120e486ccd16e, type: 3}
       propertyPath: m_origin
       value: 
