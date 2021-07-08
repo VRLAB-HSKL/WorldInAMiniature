@@ -19,9 +19,17 @@ public class VRCameraTracker : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0, pivot.localRotation.eulerAngles.y + target.localRotation.eulerAngles.y, 0);
     }
 
-    // to set default target and pivot automatically to VROrigin and Camera
+    // to set default target and pivot automatically to VROrigin and Camera 
     // source: Teleportable.cs from viu
 #if UNITY_EDITOR
+    void OnValidate()
+    {
+        if (target == null || pivot == null)
+        {
+            FindCameraAndCamRoot();
+        }
+    }
+
     protected virtual void Reset()
     {
         FindCameraAndCamRoot();

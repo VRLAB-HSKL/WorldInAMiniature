@@ -29,9 +29,17 @@ public class TeleportToPlayer : MonoBehaviour
         transform.localPosition = headPosition - new Vector3(0, 0.4f, 0) + Vector3.ProjectOnPlane(pivot.forward, target.up);
     }
 
-    // to set default target and pivot automatically to VROrigin and Camera
+    // to set default target and pivot automatically to VROrigin and Camera 
     // source: Teleportable.cs from viu
 #if UNITY_EDITOR
+    void OnValidate()
+    {
+        if (target == null || pivot == null)
+        {
+            FindCameraAndCamRoot();
+        }
+    }
+
     protected virtual void Reset()
     {
         FindCameraAndCamRoot();

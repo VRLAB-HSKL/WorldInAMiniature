@@ -25,6 +25,13 @@ public class TeleportOnDrop : MonoBehaviour
     // to set default target and pivot automatically to VROrigin and Camera 
     // source: Teleportable.cs from viu
 #if UNITY_EDITOR
+    void OnValidate() {
+        if (target == null || pivot == null)
+        {
+            FindCameraAndCamRoot();
+        }
+    }
+
     protected virtual void Reset()
     {
         FindCameraAndCamRoot();
