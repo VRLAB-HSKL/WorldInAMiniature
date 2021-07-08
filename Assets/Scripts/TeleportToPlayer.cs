@@ -23,10 +23,13 @@ public class TeleportToPlayer : MonoBehaviour
 
     private void OnPadTouch()
     {
-        var headPosition = target.localPosition + target.localRotation * pivot.localPosition;
+        if(enabled)
+        {
+            var headPosition = target.localPosition + target.localRotation * pivot.localPosition;
 
-        // teleport to 0.4m below headPosition and 1m in front
-        transform.localPosition = headPosition - new Vector3(0, 0.4f, 0) + Vector3.ProjectOnPlane(pivot.forward, target.up);
+            // teleport to 0.4m below headPosition and 1m in front
+            transform.localPosition = headPosition - new Vector3(0, 0.4f, 0) + Vector3.ProjectOnPlane(pivot.forward, target.up);
+        }
     }
 
     // to set default target and pivot automatically to VROrigin and Camera 
