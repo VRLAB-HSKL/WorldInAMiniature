@@ -16,7 +16,7 @@ WIM stellt eine Möglichkeit für das Travelling und die Objektselektion/-manipu
 - Raycast auf Objekt ausrichten und Trigger-Button gedrückt halten um Objekte zu bewegen
 - Charakter bewegen und loslassen um zu teleportieren
 - die 3D Miniatur-Platte ist "sticky", d. h. einmal Trigger betätigen zum greifen und ein weiteres mal zum Loslassen (Platte muss mit Controller berührt werden)
-- Controller-Touchpad berühren, um 3D Miniatur vor den Benutzer zu teleportieren
+- Menu-Button betätigen, um das Menu zu öffnen (ermöglicht WIM zu sich zu teleportieren und Restart)
 
 
 ## Anleitung zur Benutzung
@@ -38,4 +38,9 @@ Die 3D Miniatur, welche sich nicht auf dem Tisch befindet kann bewegt werden. Hi
 
 
 #### Teleportieren der schwebenden 3D Miniatur
-Die 3D Miniatur kann auch zum Spieler teleportiert werden. Hierzu muss das Touchpad des linken Controllers berührt werden (nicht drücken, nur berühren reicht). Dann wird die Platte mit der 3D Miniatur vor den Spieler teleportiert. Funktioniert nur mit dem linken Controller.
+Die 3D Miniatur kann auch zum Spieler teleportiert werden. Hierzu muss der Menu-Button betätigt werden, um das Menu zu öffnen. Dort dann den entsprechenden Button auf dem UI auswählen.
+
+
+#### Welt zurücksetzen
+Um die Änderungen an der Welt zurückzusetzen, den Menu-Button betätigen, um das Menu zu öffnen. Dort dann den entsprechenden Button auf dem UI auswählen.
+
