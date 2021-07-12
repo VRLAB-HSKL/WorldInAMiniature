@@ -2,26 +2,48 @@ using UnityEngine;
 using HTC.UnityPlugin.Vive;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// "Synchronisiert" den Transform von diesem gameObject mit dem vom target-Transform.
+/// </summary>
 public class TransformTracker : MonoBehaviour
 {
-    [Tooltip("The transform to track. Syncs this objects tranform with targets transform (and vice versa if updateTarget is true)")]
+    /// <summary>
+    /// Das Objekt, von welchem die Positon und Rotation getrackt wird.
+    /// </summary>
+    [Tooltip("Welches Transform soll getrackt werden?")]
     public Transform target;
 
-    [Tooltip("If targets transform should be updated when clones transform changes")]
+    /// <summary>
+    /// Ob die Position und Rotation des target Objekts aktualisiert werden soll, falls diese Objekt bewegt wird.
+    /// </summary>
+    [Tooltip("Soll das target Transform aktualisiert werden, wenn sich dieses Objekt bewegt?")]
     public bool updateTarget = true;
 
-    private bool trackTargetEnabled = true;
+    /// <summary>
+    /// Ob dieses Objekt gerade bewegt wird.
+    /// </summary>
+    private bool isBeingDragged = false;
 
+    /// <summary>
+    /// Falls dieses Objekt eine Draggable Komponente besitzt, soll eine Variable gesetzt werden, um zu merken ob dieses Objekt
+    /// gerade bewegt wird.
+    /// </summary>
     private void Start()
     {
-        // if grabbed clone (this object) then dont track target, instead update target (if updateTarget is true)
-        GetComponent<Draggable>().afterGrabbed.AddListener((Draggable d) => trackTargetEnabled = false);
-        GetComponent<Draggable>().onDrop.AddListener((Draggable d) => trackTargetEnabled = true);
+        if(GetComponent<Draggable>() != null)
+        {
+            GetComponent<Draggable>().afterGrabbed.AddListener((Draggable d) => isBeingDragged = true);
+            GetComponent<Draggable>().onDrop.AddListener((Draggable d) => isBeingDragged = false);
+        }
     }
 
+    /// <summary>
+    /// Solange dieses Objekt nicht bewegt wird, wird die lokale Position und Rotation auf die vom target Objekt aktualisiert.
+    /// Sonst wird, falls updateTarget true ist, die lokale Position und Rotation des target Objekts aktualisiert.
+    /// </summary>
     void Update()
     {
-        if (trackTargetEnabled)
+        if (!isBeingDragged)
         {
             transform.localPosition = target.transform.localPosition;
             transform.localRotation = target.transform.localRotation;

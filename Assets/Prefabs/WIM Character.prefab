@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8386721578374163739}
   - component: {fileID: 8386721578374163740}
   m_Layer: 0
-  m_Name: Character
+  m_Name: WIM Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,8 +140,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8386721578374163739}
-        m_TargetAssemblyTypeName: TeleportOnDrop, Assembly-CSharp
-        m_MethodName: TeleportTarget
+        m_TargetAssemblyTypeName: TeleportPlayerToThis, Assembly-CSharp
+        m_MethodName: Teleport
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -2,15 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeleportOnDrop : MonoBehaviour
+/// <summary>
+/// Ermöglicht es den Spieler an die selbe lokale Position zu teleportieren, wie das Objekt, welches dieses Skript als
+/// Komponente besitzt.
+/// </summary>
+public class TeleportPlayerToThis : MonoBehaviour
 {
-    [Tooltip("The actual transfrom that will be moved Ex. VROrigin")]
+    /// <summary>
+    /// Das Root-Objekt der Camera. Dieses Objekt ist das Objekt, welches bewegt wird.
+    /// </summary>
+    [Tooltip("Das eigentliche Objekt, welches bewegt wird. z. B. VROrigin (Root Objekt der Camera)")]
     public Transform target;
 
-    [Tooltip("The actual pivot point that want to be teleported to the pointed location Ex. Camera")]
+    /// <summary>
+    /// Das Camera Objekt.
+    /// </summary>
+    [Tooltip("Die Camera, welche bewegt werden soll")]
     public Transform pivot;
 
-    public void TeleportTarget()
+    /// <summary>
+    /// Teleportiert den Spieler zur selben lokalen Position, wie das Objekt, welches diese Komponente besitzt und 
+    /// passt die Blickrichtung an. Bei der Position werden x, y und z berücksichtigt, bei der Rotation wird nur die Rotation,
+    /// um die y-Achse berücksichtigt.
+    /// </summary>
+    public void Teleport()
     {
         // set new position of vr origin
         target.localPosition = transform.localPosition - target.localRotation * pivot.localPosition;
@@ -25,6 +40,9 @@ public class TeleportOnDrop : MonoBehaviour
     // to set default target and pivot automatically to VROrigin and Camera 
     // source: Teleportable.cs from viu
 #if UNITY_EDITOR
+    /// <summary>
+    /// Ermöglicht das Setzen von Standardwerten für target und pivot.
+    /// </summary>
     void OnValidate() {
         if (target == null || pivot == null)
         {
@@ -32,11 +50,17 @@ public class TeleportOnDrop : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Zum Zurücksetzen von target und pivot auf die Standardwerte
+    /// </summary>
     protected virtual void Reset()
     {
         FindCameraAndCamRoot();
     }
 #endif
+    /// <summary>
+    /// Setzt pivot auf die Camera und target auf das root-Objekt der Camera.
+    /// </summary>
     private void FindCameraAndCamRoot()
     {
         foreach (var cam in Camera.allCameras)
