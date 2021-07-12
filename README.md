@@ -24,7 +24,7 @@ Nach dem Starten der Anwendung befindet sich der Benutzer in einem kleinen Teil 
 
 
 #### Objekt Manipulation
-Beide Controller strahlen einen Raycast nach vorne aus. Ein Raycast kann auf ein Objekt gerichtet werden und mit gedrücktem Trigger-Button kann das Objekt bewegt werden. Es kann sowohl die 3D Miniatur, als auch das "reallife" Objekt bewegt werden. Wird ein Objekt in der 3D Miniatur bewegt, bewegt sich das entsprechende "reallife" Objekt in Echtzeit mit. Umgekehrt gilt das selbe.
+Beide Controller strahlen einen Raycast nach vorne aus. Ein Raycast kann auf ein Objekt gerichtet werden und mit gedrücktem Trigger-Button kann das Objekt bewegt werden. Es kann sowohl die 3D Miniatur, als auch das "reallife" Objekt bewegt werden. Wird ein Objekt in der 3D Miniatur bewegt, bewegt sich das entsprechende "reallife" Objekt in Echtzeit mit. Umgekehrt gilt das selbe. Durch bewegen des Daumens auf dem Trackpad, kann das ausgewählte Objekt zu sich hin oder von sich weg bewegt werden.
 
 Es können bis auf die Straßen, den Tisch (mit der 3D Miniatur) und den Boden alle Objekte bewegt werden.
 
