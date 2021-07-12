@@ -42,5 +42,5 @@ Die 3D Miniatur kann auch zum Spieler teleportiert werden. Hierzu muss der Menu-
 
 
 #### Welt zurücksetzen
-Um die Änderungen an der Welt zurückzusetzen, den Menu-Button betätigen, um das Menu zu öffnen. Dort dann den entsprechenden Button auf dem UI auswählen.
+Um die Änderungen an der Welt zurückzusetzen, den Menu-Button betätigen und dort dann den entsprechenden Button auswählen.
 
