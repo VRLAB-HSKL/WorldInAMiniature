@@ -49,12 +49,9 @@ public class MiniWorld : MonoBehaviour
     /// </summary>
     private void CloneRealWorld()
     {
-        var parentTransform = transform;
-        parentTransform.Translate(new Vector3(0f, 0.1f, 0f));
-
         foreach (GameObject realObject in realObjects)
         {
-            GameObject clonedObject = Instantiate(realObject, parentTransform);
+            GameObject clonedObject = Instantiate(realObject, this.transform);
 
             TrackTransform(realObject, clonedObject);
         }
