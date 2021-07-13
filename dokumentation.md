@@ -70,14 +70,14 @@ Für das Teleportieren eines Objekts zum Spieler wurde das Skript `TeleportThisT
 Damit der Spieler wieder in einer neuen Welt starten kann, wurde im Menü ein Neustart-Button hinzugefügt. Über diesen wird die Scene neu geladen.
 
 ### Verwenden von WIM in einer eigenen Scene
-1. In der eigenen Scene ein neues leeres Objekt erstellen und das `MiniWorld` Skript diesem Objekt hinzufügen. Die Positionierung ist nicht relevant, da diese zur Laufzeit an die von `origin` angepasst wird
+1. In der eigenen Scene ein neues leeres Objekt erstellen (im Folgenden wird das Objekt WIM genannt) und das `MiniWorld` Skript diesem Objekt hinzufügen. Die Positionierung ist nicht relevant, da diese zur Laufzeit an die von `origin` angepasst wird
 2. In `origin` den Ursprung der 3D Miniatur festlegen (kann z. B. ein Tisch sein oder eine bewegbare Platte)
 3. Optional kann der Origin Offset festgelegt werden, damit z. B. die 3D Miniatur nicht im origin-Objekt drin hängt
 4. Alle Objekte die in der Miniatur inkludiert werden sollen, müssen im Inspector bei dem `MiniWorld` Skript unter `Real Objects` hinzugefügt werden
-5. Dem leeren Objekt das `WIM Character` Prefab hinzufügen. Die Positionierung ist nicht relevant, da diese zur Laufzeit an die des Nutzers angepasst wird
-6. Um die Skalierung anzupassen, den Scale Parameter von dem leeren Objekt entsprechend anpassen, z. B. 0.02 für x, y und z für eine Verhältnis von 1:50 von Miniatur zur realen Welt
+5. Dem WIM Objekt das `WIM Character` Prefab hinzufügen. Die Positionierung ist nicht relevant, da diese zur Laufzeit an die des Nutzers angepasst wird
+6. Um die Skalierung anzupassen, den Scale Parameter von dem WIM Objekt entsprechend anpassen, z. B. 0.1 für x, y und z für eine Verhältnis von 1:10 von Miniatur zur realen Welt
 
-Folgende Abbildung zeigt eine minimale Konfiguration für WIM am Beispiel des Vive Input Utiltiy Examples "4. Teleport":
+Folgende Abbildung zeigt eine minimale Konfiguration für WIM am Beispiel des Vive Input Utiltiy Beispiels "4. Teleport":
 ![inspector](https://user-images.githubusercontent.com/34436776/125451336-c0dd8407-8f27-4af4-a840-8fe1b8b16141.PNG)
 
 Im Simulator sieht dies dann wie folgt aus:
