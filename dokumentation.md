@@ -77,6 +77,13 @@ Damit der Spieler wieder in einer neuen Welt starten kann, wurde im Menü ein Ne
 5. Dem leeren Objekt das `WIM Character` Prefab hinzufügen. Die Positionierung ist nicht relevant, da diese zur Laufzeit an die des Nutzers angepasst wird
 6. Um die Skalierung anzupassen, den Scale Parameter von dem leeren Objekt entsprechend anpassen, z. B. 0.02 für x, y und z für eine Verhältnis von 1:50 von Miniatur zur realen Welt
 
+Folgende Abbildung zeigt eine minimale Konfiguration für WIM am Beispiel des Vive Input Utiltiy Examples "4. Teleport":
+![inspector](https://user-images.githubusercontent.com/34436776/125451336-c0dd8407-8f27-4af4-a840-8fe1b8b16141.PNG)
+
+Im Simulator sieht dies dann wie folgt aus:
+![in_game](https://user-images.githubusercontent.com/34436776/125451418-2867b081-f993-4bf7-b894-bc14159ca912.PNG)
+
+
 ## Ausblick
 Die aktuelle Implementierung könnte noch wie folgt erweitert werden:
 - Es könnte noch ein Zoomen und Scrollen der WIM, wie diese in [3] oder [4] beschrieben ist, implementiert werden, um auch größere Welten erkennbar darzustellen
