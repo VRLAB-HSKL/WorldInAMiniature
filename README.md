@@ -1,7 +1,3 @@
-# AVR21-7
-Repository for Kronhardt
-
-
 # World in a Miniature (WIM)
 WIM stellt eine Möglichkeit für das Travelling und die Objektselektion/-manipulation innerhalb einer virtuellen Welt dar. Dabei wird die virtuelle Welt als 3D Miniatur dargestellt, welche der Benutzer in der Hand halten kann. Darin kann er Objekte auswählen und manipulieren. In der 3D Miniatur wird der Benutzer selbst als Charakter dargestellt. Dieser Miniaturcharakter kann an eine Stelle in der 3D Miniatur bewegt werden, um sich selbst innerhalb der virtuellen Welt dorthin zu teleportieren.
 
